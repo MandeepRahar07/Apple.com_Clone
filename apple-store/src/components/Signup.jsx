@@ -4,7 +4,7 @@ import Login from './Login';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react';
 
 
@@ -12,7 +12,7 @@ import { useToast } from '@chakra-ui/react';
 const Signup = ()=>{
     const [showPassword, setShowPassword] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
     const [data , setData] = useState({
@@ -126,7 +126,7 @@ const Signup = ()=>{
             <br></br>
             <FormControl >
             {/* <Text fontSize='xl'color='gray.500'>Date Of Birth</Text> */}
-                    <Input type='text' height="4rem" width='30rem' placeholder='Date Of Birth' sx={{ '::placeholder': { fontSize: 'xl' } }} color='blue.500' name = "birth" onChange={handleChange} />
+                    <Input type='date' height="4rem" width='30rem' placeholder='Date Of Birth' sx={{ '::placeholder': { fontSize: 'xl' } }} color='blue.500' name = "birth" onChange={handleChange} />
             </FormControl>
             <br></br>
             <br></br>
