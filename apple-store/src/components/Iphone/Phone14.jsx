@@ -33,14 +33,14 @@ const Phone14 = () => {
       const [gb , setGb] = useState("");   // select phone according to the storage 
       const [defaultPictureVisible, setDefaultPictureVisible] = useState(true); // to desplay final selected image at the bottom
       const [order, setOrder] = useState(
-        'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-plus-purple-witb-202209?wid=186&hei=392&fmt=jpeg&qlt=95&.v=1660679147102'
+        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-storage-select-202209-6-1inch-product-red?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1660691573456'
       ); // dispaly by default img at the final selected imag place 
 
 
     // get data from backend ...............................................................................................................................
 
       const fetchData = () => {
-        axios.get('http://localhost:8080/iphone14/650bf71d420d5b3eb4a7fa23')
+        axios.get('http://localhost:8080/iphone14/650da0f210e21fd13d4c896b')
           .then((res) => {
             console.log(res.data);
             setData(res.data);
@@ -50,13 +50,16 @@ const Phone14 = () => {
             console.log(err);
           });
       };
-      console.log(data);
+      
     
-
+// useEffect(()=>{
+//     fetchData();
+// },[])
     
       useEffect(() => {
         fetchData();
         const interval = setInterval(() => {
+            
           setCurrentIndex((prevIndex) =>
             prevIndex === images.length - 1 ? 0 : prevIndex + 1
           );
@@ -68,8 +71,7 @@ const Phone14 = () => {
       }, [currentIndex, images.length]);
 
 
-
-    //   .......................................HANDLE PHONE CLICK BUTTON (IPHONE 14 OR IPHONE14 PLUS)...........................................
+//   .......................................HANDLE PHONE CLICK BUTTON (IPHONE 14 OR IPHONE14 PLUS)...........................................
       const handlePhone14=()=>{
        setButtonClick((prevButtonClick) => !prevButtonClick)
        setColor(data.iPhone14)
@@ -83,7 +85,7 @@ const Phone14 = () => {
         <Box textAlign="left" ml = "20" mr = "20">
             <Heading as="h1" size="2xl" mr="2">
                 Buy iPhone 14
-            </Heading>
+                </Heading>
             <Text fontSize="xl" color="gray.500" mr="0" mt="2">
                 From $799 or $33.29/mo. for 24 mo. 
             </Text>
@@ -180,6 +182,7 @@ const Phone14 = () => {
                             <Box textAlign="left">
                                 <Text fontSize="2xl" color="black" fontWeight="bold" mt="1" ml="0" textAlign="left">Need help choosing a model?</Text>
                                 <Text fontSize="xl" color="gray.500" fontWeight="bold" mt="3" ml="0" textAlign="left">Explore the differences in screen size and battery life.</Text>
+                           
                             </Box>
                      </Flex>  
                 </Button>
