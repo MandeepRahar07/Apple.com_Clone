@@ -448,7 +448,7 @@ function Phone144() {
                          <h1>
                          <AccordionButton>
                              <Box as="span" flex='1' textAlign='left'>
-                             Frequently Questions
+                             Frequently Asked Questions
                              </Box>
                              <AccordionIcon />
                          </AccordionButton>
