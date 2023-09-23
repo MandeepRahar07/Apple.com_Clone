@@ -439,8 +439,134 @@ function Phone144() {
                        </Box>
 
 
+{/* ........................QUESTION AND ANSWER................... */}
+                       <Box mt= "200">
+              
+              <Accordion defaultIndex={[0]} allowMultiple>
 
-                       
+                     <AccordionItem>
+                         <h1>
+                         <AccordionButton>
+                             <Box as="span" flex='1' textAlign='left'>
+                             Frequently Asked Questions
+                             </Box>
+                             <AccordionIcon />
+                         </AccordionButton>
+                         </h1>
+                         <AccordionPanel pb={4}>
+                      
+                         <AccordionItem>
+                     <h2>
+                     <AccordionButton>
+                         <Box as="span" flex='1' textAlign='left'>
+                         What is eSIM?
+                         </Box>
+                         <AccordionIcon />
+                     </AccordionButton>
+                     </h2>
+                     <AccordionPanel pb={4}>
+                     An eSIM is an industry-standard digital SIM that allows you to activate a mobile data plan from your network provider without having to use a physical SIM.
+                      You can install eight or more eSIMs on an iPhone and use two phone numbers at the same time.eSIM is better than a physical SIM card because it has so many more benefits: – eSIM is small: This not only allows extra room for other components, or perhaps a larger battery,
+                       it also enables manufacturers to rejig the internal layout of their devices.There are no fees to activate an iPhone with an eSIM. New activations may be completed outside of the US, but the device must register on the T-Mobile network to begin using the service. 
+                       To activate your iPhone eSIM on another wireless provider or manage eSIM settings, check out our Tutorials.
+                     </AccordionPanel>
+                 </AccordionItem>
+
+                 <AccordionItem>
+                     <h2>
+                     <AccordionButton>
+                         <Box as="span" flex='1' textAlign='left'>
+                         Can i activate an iPhone 14 outside of the United States?
+                         </Box>
+                         <AccordionIcon />
+                     </AccordionButton>
+                     </h2>
+                     <AccordionPanel pb={4}>
+                     You can activate an unlocked iPhone 14 model that was purchased in the United States with over 400 network providers in 100 countries all over the world that support eSIM on iPhone. Contact your network provider to confirm they support eSIM on your mobile data plan.
+                     There is a significant factor to keep in mind, though. Only US models of the iPhone 14, iPhone 14 Plus, iPhone 14 Pro, and iPhone 14 Pro Max, get the physical SIM card slot removed. Models sold in other countries come with a physical SIM card slot, as well as two eSIMs
+                     Buying an iPhone from the US may be cheaper, but it may not be compatible with Indian carriers. On the other hand, buying an iPhone from India may be more expensive, but it will likely be compatible with Indian carriers.
+                     </AccordionPanel>
+                 </AccordionItem>
+                 <AccordionItem>
+                     <h2>
+                     <AccordionButton>
+                         <Box as="span" flex='1' textAlign='left'>
+                         Will my new iPhone be unlocked?
+                         </Box>
+                         <AccordionIcon />
+                     </AccordionButton>
+                     </h2>
+                     <AccordionPanel pb={4}>
+                     Every iPhone you buy from us is unlocked. Your new iPhone will work with your network provider, so you won't have to change your plan or phone number. 
+                     Once your new iPhone is activated, it remains unlocked, which means that at any time you can decide to switch to any network that provides service for iPhone.
+                     Any iPhone purchased directly from Apple will be unlocked, unless it is financed through a carrier. If it is not financed through the carrier Apple can set it up with any carrier and it will still be unlocked.
+                     <br></br> <br></br>The carrier will process your request. You might have to wait a few days to a couple of weeks for it to unlock your device. Complete the unlocking process. The carrier will provide you with instructions that you will have to follow to finish the process of unlocking your iPhone.
+                     You can carry the new iPhone in your pocket but custom duty is required to be paid if the total value is greater than 10,000 Indian rupees. You can carry mobile but if you do not declare it on the customs form, you may have to pay a penalty if you are caught.
+                     </AccordionPanel>
+                 </AccordionItem>
+
+                 <AccordionItem>
+                     <h2>
+                     <AccordionButton>
+                         <Box as="span" flex='1' textAlign='left'>
+                         what are connectivity discounts?
+                         </Box>
+                         <AccordionIcon />
+                     </AccordionButton>
+                     </h2>
+                     <AccordionPanel pb={4}>
+                     The Affordable Connectivity Program (ACP) gives a discount on your household's monthly broadband internet service, if you are eligible. Participating broadband providers will apply this discount to your broadband plan.
+                     A discount of up to $30/month for internet service (or a discount up to $75/month for households on qualifying Tribal lands); and. A one-time discount of up to $100 for a laptop, desktop computer, or tablet purchased through a participating provider.
+                     The Affordable Connectivity Program is limited to one monthly service discount and one device discount per household. Who Is Eligible? Check out fcc.gov/ACP for a Consumer FAQ and other program resources.
+                     Connectivity Service means the service that allows Dedicated Equipment to connect to the internet.The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.
+
+                     </AccordionPanel>
+                 </AccordionItem>
+                 <AccordionItem>
+                     <h2>
+                     <AccordionButton>
+                         <Box as="span" flex='1' textAlign='left'>
+                         Will my iphone work worldwide?
+                         </Box>
+                         <AccordionIcon />
+                     </AccordionButton>
+                     </h2>
+                     <AccordionPanel pb={4}>
+                     Remember that you can use your iPhone abroad if it is already unlocked by the time that you leave home. Thus, you won't end up having any issues or ending up with a headache on your trip and no problems when using a SIM from another country.
+                     You can find out if your iPhone is locked by going to Settings  General  About. If "No SIM restrictions" appears next to Carrier Lock, your iPhone is unlocked. If you don't want to switch carriers and your device is locked because you forgot the passcode, you don't need to use the steps in this article.
+                     </AccordionPanel>
+                 </AccordionItem>
+
+                 <AccordionItem>
+                     <h2>
+                     <AccordionButton>
+                         <Box as="span" flex='1' textAlign='left'>
+                         Can i return my iPhone?
+                         </Box>
+                         <AccordionIcon />
+                     </AccordionButton>
+                     </h2>
+                     <AccordionPanel pb={4}>
+                     For iPhone returns, you may return your undamaged iPhone with its included accessories within 14 days of purchase for a full refund.Return Fees When Returning a Device Bought from Apple
+
+                     With purchases of an iPhone or iPad, you will not get a full refund for returning the device. If you opened the box and the device is no longer sealed, a 25% fee may be applied to your refund. Even if you did not open the box, a 15% restocking fee may be applied.
+                     Returns are subject to Apple's Sales and Refunds Policy. If you change your mind, you can return your Standard hardware to us within 14 calendar days of delivery. Software returns are also accepted within this period, but only if the software was not unsealed
+                     For iPhone returns, you may return your undamaged iPhone with its included accessories within 14 days of purchase for a full refund.
+                     </AccordionPanel>
+                 </AccordionItem>
+
+                         </AccordionPanel>
+                     </AccordionItem>
+
+
+
+
+               
+                 </Accordion>
+         </Box>
+
+
+
 </div>
     </div>
   )
