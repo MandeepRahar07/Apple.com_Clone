@@ -10,12 +10,15 @@ import PhoneNavbar from './components/PhoneNavbar/PhoneNavbar';
 import Phone14 from './components/Iphone/Phone14';
 import Phone144 from './components/Iphone/Phone144';
 import MainNavbar from './components/Navbar/MainNavbar';
+import Cart from './components/CartPage/Cart';
+import Cartpage from './components/CartPage/Cart';
 
 
 
 function App() {
   return (
     <div className="App">
+      he;pp
     {/* <Signup></Signup> */}
      {/* <Login/> */}
      {/* <Apple/> */}
@@ -23,7 +26,8 @@ function App() {
    {/* <PhoneNavbar></PhoneNavbar> */}
 {/* <Phone14></Phone14> */}
 {/* <Phone144></Phone144> */}
-<MainNavbar></MainNavbar>
+{/* <MainNavbar></MainNavbar> */}
+{/* <Cartpage></Cartpage> */}
 
          
     </div>
