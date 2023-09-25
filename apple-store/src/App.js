@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import PhoneNavbar from './components/PhoneNavbar/PhoneNavbar';
 import Phone14 from './components/Iphone/Phone14';
 import Phone144 from './components/Iphone/Phone144';
+import MainNavbar from './components/Navbar/MainNavbar';
 
 
 
@@ -21,7 +22,8 @@ function App() {
     {/* <AppRoutes></AppRoutes> */}
    {/* <PhoneNavbar></PhoneNavbar> */}
 {/* <Phone14></Phone14> */}
-<Phone144></Phone144>
+{/* <Phone144></Phone144> */}
+<MainNavbar></MainNavbar>
 
          
     </div>

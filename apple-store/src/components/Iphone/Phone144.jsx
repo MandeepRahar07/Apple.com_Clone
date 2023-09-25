@@ -34,7 +34,7 @@ function Phone144() {
       const [gb , setGb] = useState("");   // select phone according to the storage 
       const [defaultPictureVisible, setDefaultPictureVisible] = useState(true); // to desplay final selected image at the bottom
       const [order, setOrder] = useState(
-        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-storage-select-202209-6-1inch-product-red?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1660691573456'
+        'https://www-konga-com-res.cloudinary.com/w_400,f_auto,fl_lossy,dpr_3.0,q_auto/media/catalog/product/M/Y/67343_1665419400.jpg'
       ); 
 
        // get data from backend ...............................................................................................................................
@@ -333,12 +333,12 @@ function Phone144() {
         boxShadow="xl"
         borderRadius="2xl"
       >
-        <img src={color} alt="Dan Abramov" width="100%" height="100%" />
+        <img src={color} alt="Dan Abramov" width="70%" height="70%" />
         {gb ? <Text>Storage : {gb}</Text> : ""}
       </Box>
     ) : (
       defaultPictureVisible && (
-        <img src={order} alt="Dan Abramov" width="100%" height="100%" />
+        <img src={order} alt="Dan Abramov" width="70%" height="70%" />
       )
     )}
 
