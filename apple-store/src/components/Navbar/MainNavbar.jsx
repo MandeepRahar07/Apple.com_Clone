@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Flex, Menu, MenuButton, MenuList, MenuItem, IconButton, Text } from '@chakra-ui/react';
 import { AiFillApple, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 import { FaBars } from 'react-icons/fa';
+import { AuthContext } from '../ContextApi/Context';
 
 function MainNavbar() {
+
+  const {name,setName} = useContext(AuthContext);
+
+
   const listItemStyle = {
     textDecoration: 'none', // Remove underline from list items
     listStyle: 'none',
     fontSize: '12px',
-    padding: '10px', // Remove default list bullets
+    padding: '8px', // Remove default list bullets
   };
 
 
 
   return (
-    <Box width="780px" margin="auto">
+    <Box margin="auto">
       <Flex
         as="ul"
         align="center"
@@ -110,11 +115,23 @@ function MainNavbar() {
               <MenuItem>Accosseroies</MenuItem>
               <MenuItem>Airpods</MenuItem>
               <MenuItem>Entertainment</MenuItem>
-              {/* Add more menu items here */}
+              <MenuItem>
+              {name !== "" ? name : "Login"}
+              </MenuItem>
+            
             </MenuList>
           </Menu>
         </li>
-        <li style={{ ...listItemStyle, display: { base: 'none' } }}>Login</li>
+
+        <li style={{ ...listItemStyle, display: { base: 'none' } }}>
+        <Box display={ {base: 'none', md:"block" }}>
+
+        
+          {name !== "" ? name : "Login"}
+         
+          
+          </Box>
+          </li>
       </Flex>
     </Box>
   );

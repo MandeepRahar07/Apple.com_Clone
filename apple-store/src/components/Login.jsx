@@ -44,6 +44,7 @@ const Login = () => {
         // Update data if needed
         setData({ ...data, email: '', password: '' });
   
+           
         // Display success message
         toast({
           title: 'Success',

@@ -12,6 +12,7 @@ import Phone144 from './components/Iphone/Phone144';
 import MainNavbar from './components/Navbar/MainNavbar';
 import Cart from './components/CartPage/Cart';
 import Cartpage from './components/CartPage/Cart';
+import Address from './components/Address/Address';
 
 
 
@@ -26,10 +27,10 @@ function App() {
    {/* <PhoneNavbar></PhoneNavbar> */}
 {/* <Phone14></Phone14> */}
 {/* <Phone144></Phone144> */}
-{/* <MainNavbar></MainNavbar> */}
-{/* <Cartpage></Cartpage> */}
-
-         
+{/* <MainNavbar></MainNavbar>
+<Address></Address> 
+{/* <Cartpage></Cartpage>  */}
+       <Address></Address>   
     </div>
   );
 }

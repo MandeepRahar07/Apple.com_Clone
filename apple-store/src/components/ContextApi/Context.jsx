@@ -2,13 +2,15 @@ import React, { createContext, useState } from 'react'
 
 export  const AuthContext = createContext();
 
-function ContextProvider({child}) {
+function ContextProvider({children}) {
 
     const [CartData, SetCartData]= useState([]);
-
+    const [name, SetName] = useState("")
+     
+    
   return (
-   <AuthContext.Provider value={{CartData,SetCartData}}>
-    {child}
+   <AuthContext.Provider value={{CartData,SetCartData,name,SetName}}>
+    {children}
    </AuthContext.Provider>
   )
 }

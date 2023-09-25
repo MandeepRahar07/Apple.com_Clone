@@ -9,14 +9,14 @@ import ContextProvider from './components/ContextApi/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
+  
+  <ContextProvider>
   <BrowserRouter>
     <ChakraProvider>
-      <ContextProvider>
       <App />
-      </ContextProvider>
     </ChakraProvider>
   </BrowserRouter>
+      </ContextProvider>
 
 );
 

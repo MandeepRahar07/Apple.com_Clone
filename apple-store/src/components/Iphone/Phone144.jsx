@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Box, Heading, Text , Image, Flex, Button ,Modal,
     ModalOverlay,
     ModalContent,
@@ -14,6 +14,7 @@ import { Box, Heading, Text , Image, Flex, Button ,Modal,
 import axios from "axios";
 import { useEffect , useState } from 'react';
 import {Link} from 'react-router-dom'
+import { AuthContext } from '../ContextApi/Context';
 
 function Phone144() {
 
@@ -36,6 +37,9 @@ function Phone144() {
       const [order, setOrder] = useState(
         'https://www-konga-com-res.cloudinary.com/w_400,f_auto,fl_lossy,dpr_3.0,q_auto/media/catalog/product/M/Y/67343_1665419400.jpg'
       ); 
+
+
+      const {CartData,SetCartData} = useContext(AuthContext)
 
        // get data from backend ...............................................................................................................................
 
@@ -67,6 +71,26 @@ function Phone144() {
         };
       }, []); // Empty dependency array means the effect runs only once, like componentDidMount
       
+
+      const storeData=(el)=>{
+        if(CartData.length!==0){
+          let condi=CartData.filter((ele)=>{
+            return el.title===ele.title
+        })
+        console.log(condi)
+        if(condi.length>=1){
+          alert("item is already in cart")
+        }
+        else{
+          SetCartData([...CartData,el])
+        }
+    
+        }else{
+          SetCartData([...CartData,el])
+        }
+    
+       
+      }
 
 
   return (
