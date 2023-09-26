@@ -82,6 +82,7 @@ const Address = () => {
             <option value="">Select Country</option>
             <option value="Country1">Country 1</option>
             <option value="Country2">Country 2</option>
+            <option value="Country2">Country 2</option>
             {/* Add more options as needed */}
           </Select>
         </FormControl>
