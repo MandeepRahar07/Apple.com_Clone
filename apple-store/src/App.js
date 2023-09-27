@@ -13,6 +13,7 @@ import MainNavbar from './components/Navbar/MainNavbar'
 import Cart from './components/CartPage/Cart';
 import Cartpage from './components/CartPage/Cart';
 import Address from './components/Address/Address';
+import Footer from './components/Footer';
 
 
 
@@ -32,6 +33,8 @@ function App() {
 <Address></Address> 
 {/* <Cartpage></Cartpage>  */}
        {/* <Address></Address>    */}
+
+       <Footer></Footer>
     </div>
   );
 }

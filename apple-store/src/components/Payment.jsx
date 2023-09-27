@@ -48,10 +48,11 @@ const Payment =()=>{
     };
 
     axios
-      .post("http://localhost:8080/addressadd", formData)
+      .post("https://troubled-ray-fashion.cyclic.cloud/addressadd", formData)
       .then((res) => {
         console.log(res);
         setData(res.data);
+        navigate("/success")
         // navigate("")
       })
       .catch((err) => {
@@ -65,7 +66,7 @@ const Payment =()=>{
   }
 
   return (
- <Box >
+ <Box width="100%" mb="350px" >
              <Text fontSize={{ base: '2xl', md: '3xl', xl: '4xl' }} color="gray.500" fontWeight="bold">Payment Method</Text> 
 
 {/* ........................................ BOX FOR PAYMENT METHOD............................................... */}
@@ -148,7 +149,7 @@ const Payment =()=>{
             <Text fontSize={{ base: 'sm', md: 'sm' }} color="gray.800" textAlign="left">
               Number
             </Text>
-            <Input
+            <input
               type="text"
               width="100%"
               height="2rem"
@@ -300,7 +301,7 @@ const Payment =()=>{
         </Flex>
       </Center>
       <Center mt={4}>
-      <Button colorScheme="blue" mr={3} onClick={()=>{navigate("/success")}} type="submit">
+      <Button colorScheme="blue" mr={3}  type="submit">
       Submit
     </Button>
     </Center>

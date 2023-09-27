@@ -14,7 +14,7 @@ const Signup = ()=>{
     const [showAlert, setShowAlert] = useState(false);
     const navigate = useNavigate();
     const toast = useToast()
-
+    
     const [data , setData] = useState({
       name :"",
       Lname : "",
@@ -59,13 +59,14 @@ const Signup = ()=>{
       // }
     
       try {
-        const response = await axios.post('http://localhost:8080/signup', data);
+        const response = await axios.post('https://troubled-ray-fashion.cyclic.cloud/signup', data);
     
         if (response.status === 200) {
           // Account created successfully
           console.log(response.data);
           navigate("/login");
           toast({
+            position: "top",
             title: 'Account created.',
             description: "We've created your account for you.",
             status: 'success',
@@ -82,6 +83,7 @@ const Signup = ()=>{
     
           // Display an error message
           toast({
+            position: "top",
             title: 'Error',
             description: 'This email id is already registered. Please use another one.',
             status: 'error',
@@ -94,6 +96,7 @@ const Signup = ()=>{
     
           // Display an error message
           toast({
+            position: "top",
             title: 'Error',
             description: 'Wrong password. Please try again.',
             status: 'error',
@@ -106,11 +109,13 @@ const Signup = ()=>{
     
           // Display an error message
           toast({
+          
             title: 'Error',
             description: 'An error occurred during login. Please try again later.',
             status: 'error',
             duration: 5000,
             isClosable: true,
+            position: 'top',
           });
         }
       }
@@ -120,7 +125,7 @@ const Signup = ()=>{
 
     return (
        
-    <div>
+    <div style={{marginBottom:"50px"}}>
         <form onSubmit={handleSubmit}>
 
        

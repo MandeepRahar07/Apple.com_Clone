@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Box, Heading, Text , Image, Flex, Button ,Modal,
     ModalOverlay,
@@ -16,6 +15,8 @@ import axios from "axios";
 import { useEffect , useState } from 'react';
 import {Link} from 'react-router-dom'
 import PhoneNavbar from '../Navbar/PhoneNavbar';
+import { useContext } from 'react';
+import { AuthContext } from '../ContextApi/Context';
 
 function Phone11() {
 
@@ -39,10 +40,32 @@ function Phone11() {
         'https://cdn.alloallo.media/catalog/product/apple/iphone/iphone-11-pro/iphone-11-pro-space-gray.jpg'
       ); 
 
+      const [price, setPrice] = useState(37299);
+
+      const {CartData,SetCartData} = useContext(AuthContext)
+
+      // .....................add item into cart .........................
+
+  const addToCart = () => {
+    // Create a new item object to add to the cart
+    const newItem = {
+      image : color,
+      name: data.iPhone11Title,
+      quantity: 1,
+      price: price,
+    };
+  
+    console.log("Adding item to cart:", newItem);
+  
+    // Update the cartData array with the new item
+    SetCartData((prevCartData) => [...prevCartData, newItem]);
+  };
+  
+
        // get data from backend ...............................................................................................................................
 
        const fetchData = () => {
-        axios.get('http://localhost:8080/iphone11/65112cc8c61cf2164ad7d99f')
+        axios.get('https://troubled-ray-fashion.cyclic.cloud/iphone11/651453e9ced596e1193ac751')
           .then((res) => {
             console.log(res.data);
             setData(res.data);
@@ -76,6 +99,27 @@ function Phone11() {
        setGb("")
       }
 
+      
+// ......................add item into Cartpage................. 
+
+const storeData=(el)=>{
+  if(CartData.length!==0){
+    let condi=CartData.filter((ele)=>{
+      return el.title===ele.title
+  })
+  console.log(condi)
+  if(condi.length>=1){
+    alert("item is already in cart")
+  }
+  else{
+    SetCartData([...CartData,el])
+  }
+
+  }else{
+    SetCartData([...CartData,el])
+  } 
+}
+
   return (
     <div> 
       <PhoneNavbar/>
@@ -89,6 +133,9 @@ function Phone11() {
   From $599 or $24.95/month for 24 months
   </Text>
 </Box>
+
+
+
 
 {/*............................LEFT SIDE IMAGE BOX.............................................................................  */}
   
@@ -318,7 +365,7 @@ function Phone11() {
 </Flex>
 
 
-<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>setGb("128GB")}   >       
+<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(37999)}}     >       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">128GB</Text>
@@ -327,7 +374,10 @@ function Phone11() {
                      </Flex>  
 </Button>
 
-<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={()=>setGb("256GB")}  >       
+<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}   onClick={() => {
+  setGb("256GB");
+  setPrice(40999);
+}}  >       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">256GB</Text>
@@ -336,7 +386,9 @@ function Phone11() {
                      </Flex>  
 </Button>
 
-<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={()=>setGb("512GB")} >       
+<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}   onClick={()=>{
+ setGb("512GB");
+ setPrice(70599)}}>       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">512GB</Text>
@@ -376,6 +428,7 @@ function Phone11() {
       >
         <img src={color} alt="Dan Abramov" width="65%" height="65%" />
         {gb ? <Text fontSize="2xl" color="black" fontWeight="bold" mt="1" ml="0" textAlign="left">Storage : {gb}</Text> : ""}
+        {gb ? <Text fontSize="2xl" color="black" fontWeight="bold" mt="1" ml="0" textAlign="left">Price : ₹{price}</Text> : ""}
       </Box>
     ) : (
       defaultPictureVisible && (
@@ -422,6 +475,7 @@ function Phone11() {
             colorScheme="blue"
             type="submit"
             fontSize={{ base: 'lg', md: '2xl' }}
+            onClick={addToCart}
           >
             Add to Cart
           </Button>
@@ -449,7 +503,7 @@ function Phone11() {
 <Center mt="10">
 
 <Flex >
-        <Link>
+        <Link to = "/iphone15preorder">
                 <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
                         <Image src='https://img.freepik.com/premium-photo/smart-phone-isolated-white-screen-with-empty-background-mockup_752648-43.jpg' alt='iPhone 15' 
                         height= "200px" width= "100%" />
@@ -457,9 +511,9 @@ function Phone11() {
                         <Center> <Text fontSize="xl" >The ultimate iPhone.</Text></Center>
                        
                      </Box>
-                </Link>
+          </Link>
 
-                <Link>
+               <Link to = "/iphone14">
                 <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
                         <Image src='https://cdn.dxomark.com/wp-content/uploads/medias/post-125428/Apple-iPhone-14-Pro-Max_FINAL_featured-image-packshot-review-1.jpg' alt='iPhone 14' 
                        height= "200px" width= "100%" />
@@ -469,7 +523,7 @@ function Phone11() {
                      </Box>
                 </Link>
 
-                <Link>
+                <Link to = "/iphone13">
                 <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
                         <Image src='https://media.ldlc.com/r1600/ld/products/00/05/93/86/LD0005938604_1.jpg' alt='Dan Abramov' 
                         height= "200px" width= "80%" />
@@ -479,7 +533,7 @@ function Phone11() {
                      </Box>
                 </Link>
 
-                <Link>
+                <Link to = "/iphone10">
                 <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
                         <Image src='https://www.refurbished.store/cache/images/iphone-xs-zilver-multiapple_1_600x600_BGresize_16777215-tj.png' alt='Dan Abramov' 
                        height= "200px" width= "100%" />
@@ -489,10 +543,8 @@ function Phone11() {
                      </Box>
                 </Link>
         </Flex>
-                       </Center>
-
-                       </Box>
-
+   </Center>
+</Box>
 
 {/* ........................QUESTION AND ANSWER................... */}
                        <Box mt= "200">
@@ -628,4 +680,3 @@ function Phone11() {
 }
 
 export default Phone11
-

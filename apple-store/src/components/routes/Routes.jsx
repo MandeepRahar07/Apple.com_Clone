@@ -15,6 +15,8 @@ import Airpods from '../components/Airpods';
 import Watch from '../components/Watch';
 import Payment from '../components/Payment';
 import Cartpage from '../CartPage/Cart';
+import PrivatRoute from '../PrivateRouting';
+
 
 
 const AppRoutes = () => {
@@ -28,7 +30,15 @@ const AppRoutes = () => {
         <Route path= "/iphone14" element = {<Phone14/>}></Route>
         <Route path= "/iphone15" element = {<Phone15/>}></Route>
         <Route path= "/iphone15preorder" element = {<Phone15PreOrder/>}></Route>
+
+      
+        {/* <Route element={<PrivatRoute></PrivatRoute>}>
         <Route path= "/address" element = {<Address/>}></Route>
+    </Route> */}
+
+    <Route path ="/address" element={<PrivatRoute><Address/></PrivatRoute> }></Route>
+
+
         <Route path= "/cart" element = {<Cartpage/>}></Route>
         <Route path= "/iphone10" element = {<Phone10/>}></Route>
         <Route path= "/iphone11" element = {<Phone11/>}></Route>

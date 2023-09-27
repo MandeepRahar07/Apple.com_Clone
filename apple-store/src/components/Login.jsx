@@ -21,7 +21,7 @@ import { useContext } from 'react';
 import { AuthContext } from './ContextApi/Context';
 
 const Login = () => {
-  const {name, setIsAuth, setNamelogin } = useContext(AuthContext);
+  const {name, auth,setIsAuth, setNamelogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -48,16 +48,20 @@ const Login = () => {
       if (response.status === 200) {
         navigate('/');
         toast({
+          position: "top",
           title: 'Success',
           description: 'Login successful',
           status: 'success',
           duration: 5000,
           isClosable: true,
         });
+
+        setIsAuth(true);
+        console.log(auth);
         const { token } = response.data;
         localStorage.setItem('token', token);
 
-        const userResponse = await fetch('http://localhost:8080/users', {
+        const userResponse = await fetch('https://troubled-ray-fashion.cyclic.cloud/users', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -71,8 +75,9 @@ const Login = () => {
           if (matchedUser) {
             const matchedUserName = matchedUser.name;
             setNamelogin(matchedUserName);
+
             console.log(name);
-            setIsAuth(true);
+           
           }
         }
       }
@@ -82,6 +87,7 @@ const Login = () => {
       if (error.response && error.response.status === 409) {
         console.error('User not found. Please sign up first.');
         toast({
+          position: "top",
           title: 'Error',
           description: 'User not found. Please sign up first.',
           status: 'error',
@@ -91,6 +97,7 @@ const Login = () => {
       } else if (error.response && error.response.status === 422) {
         console.error('Wrong password. Please try again.');
         toast({
+          position: "top",
           title: 'Error',
           description: 'Wrong password. Please try again.',
           status: 'error',
@@ -102,7 +109,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div style={{marginBottom:"15px"}}>
       <form onSubmit={handleSubmit}>
       
         <center  flexDirection="column" alignItems="center">

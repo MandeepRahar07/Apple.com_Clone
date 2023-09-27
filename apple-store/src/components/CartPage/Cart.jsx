@@ -49,7 +49,7 @@ function Cartpage() {
   }, [CartData]);
 
   return (
-    <div>
+    <div style={{ width:"100%",marginBottom:"150px" }} >
       {CartData.length === 0 ? (
         <div>
           <Heading>Add Item to Cart</Heading>
@@ -104,7 +104,7 @@ function Cartpage() {
               </Box>
             ))}
           </div>
-          <Box style={{ float: 'right', textAlign: 'right', marginRight: '20px', marginTop: '20px' }}>
+          <Box style={{ float: 'right', textAlign: 'right', marginRight: '20px', marginTop: '20px',  }}>
             <Flex>
               <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px', color: '#333' }}>
                 Total Price:
@@ -125,6 +125,7 @@ function Cartpage() {
                 fontSize="16px"
                 marginTop="10px"
                 transition="background-color 0.3s ease"
+                
               >
                 Checkout
               </Button>

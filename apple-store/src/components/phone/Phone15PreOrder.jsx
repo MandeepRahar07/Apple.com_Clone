@@ -15,6 +15,8 @@ import axios from "axios";
 import { useEffect , useState } from 'react';
 import {Link} from 'react-router-dom'
 import PhoneNavbar from '../Navbar/PhoneNavbar';
+import { useContext } from 'react';
+import { AuthContext } from '../ContextApi/Context';
 
 const Phone15PreOrder =()=>{
 
@@ -37,11 +39,32 @@ const Phone15PreOrder =()=>{
       const [order, setOrder] = useState(
         'https://www.bigw.com.au/medias/sys_master/images/images/h3b/h1b/45545194848286.jpg'
       ); 
-    
+      const [price, setPrice] = useState(37299);
+
+      const {CartData,SetCartData} = useContext(AuthContext)
+
+        // .....................add item into cart .........................
+
+  const addToCart = () => {
+    // Create a new item object to add to the cart
+    const newItem = {
+      image : color,
+      name: data.iPhone15Title,
+      quantity: 1,
+      price: price,
+    };
+  
+    console.log("Adding item to cart:", newItem);
+  
+    // Update the cartData array with the new item
+    SetCartData((prevCartData) => [...prevCartData, newItem]);
+  };
+  
+
        // get data from backend ...............................................................................................................................
 
        const fetchData = () => {
-        axios.get('http://localhost:8080/iphone15/651136031f51aa9e8531cdbf')
+        axios.get('https://troubled-ray-fashion.cyclic.cloud/iphone15/651464bd65f3b49d29b6e747')
           .then((res) => {
             console.log(res.data);
             setData(res.data);
@@ -70,6 +93,29 @@ const Phone15PreOrder =()=>{
         setColor(data.iPhone15)
         setGb("")
        }
+
+       
+// ......................add item into Cartpage................. 
+
+const storeData=(el)=>{
+  if(CartData.length!==0){
+    let condi=CartData.filter((ele)=>{
+      return el.title===ele.title
+  })
+  console.log(condi)
+  if(condi.length>=1){
+    alert("item is already in cart")
+  }
+  else{
+    SetCartData([...CartData,el])
+  }
+
+  }else{
+    SetCartData([...CartData,el])
+  } 
+}
+
+
 
     return (
         <div> 
@@ -146,7 +192,7 @@ const Phone15PreOrder =()=>{
                                     <Text fontSize="l" color="gray.600" fontWeight={400} mt="1" ml="0" textAlign="left">6.1-inch display</Text>
                             </Box>
                              <Box>
-                             <Text fontSize="sm" color="gray.800" fontWeight={400} textAlign="right" mt="-5">$33.29/mo. for 24 months</Text>
+                             <Text fontSize="sm" color="gray.800" fontWeight={400} textAlign="right" mt="-5">₹2805/mo. for 24 months</Text>
     
                              </Box>
                          </Flex>  
@@ -159,7 +205,7 @@ const Phone15PreOrder =()=>{
                                     <Text fontSize="l" color="gray.600" fontWeight={400} mt="1" ml="0" textAlign="left">6.7-inch display</Text>
                             </Box>
                              <Box>
-                             <Text fontSize="sm" color="gray.800" fontWeight={400} textAlign="right" mt="-5">$37.45/mo. for 24 months</Text>
+                             <Text fontSize="sm" color="gray.800" fontWeight={400} textAlign="right" mt="-5">₹3145/mo. for 24 months</Text>
     
                              </Box>
                          </Flex>  
@@ -314,29 +360,34 @@ const Phone15PreOrder =()=>{
     </Flex>
     
     
-    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>setGb("128GB")}   >       
+    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(37999)}}  >       
                             <Flex justifyContent="space-around" alignItems="center" width="100%">
                             <Box textAlign="left" >
                                     <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">128GB</Text>
-                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From $799 or $33.29/mo.per for 24 mo. </Text>
+                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹67915 or ₹2805/mo.per for 24 mo. </Text>
                             </Box>
                          </Flex>  
     </Button>
     
-    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={()=>setGb("256GB")}  >       
+    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={() => {
+  setGb("256GB");
+  setPrice(40999);
+}} >       
                             <Flex justifyContent="space-around" alignItems="center" width="100%">
                             <Box textAlign="left" >
                                     <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">256GB</Text>
-                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From $899 or $37.45/mo.per for 24 mo.</Text>
+                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹76415 or ₹2805/mo.per for 24 mo.</Text>
                             </Box>
                          </Flex>  
     </Button>
     
-    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={()=>setGb("512GB")} >       
+    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={()=>{
+ setGb("512GB");
+ setPrice(70599)}}>       
                             <Flex justifyContent="space-around" alignItems="center" width="100%">
                             <Box textAlign="left" >
                                     <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">512GB</Text>
-                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From $1099 or $45.79/mo.per  for 24 mo.</Text>
+                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹93415 or ₹3825/mo.per  for 24 mo.</Text>
                             </Box>
                          </Flex>  
     </Button>
@@ -369,8 +420,8 @@ const Phone15PreOrder =()=>{
           >
             <img src={color} alt="Dan Abramov" width="65%" height="65%" />
             {gb ? <Text fontSize="2xl" color="black" fontWeight="bold" mt="1" ml="0" textAlign="left">Storage : {gb}</Text> : ""}
-            
-            
+            {gb ? <Text fontSize="2xl" color="black" fontWeight="bold" mt="1" ml="0" textAlign="left">Price : ₹{price}</Text> : ""}
+    
           </Box>
         ) : (
           defaultPictureVisible && (
@@ -416,6 +467,7 @@ const Phone15PreOrder =()=>{
             colorScheme="blue"
             type="submit"
             fontSize={{ base: 'lg', md: '2xl' }}
+            onClick={addToCart}
           >
             Add to Cart
           </Button>
@@ -434,59 +486,57 @@ const Phone15PreOrder =()=>{
     
     
     {/* ................................... LINK FOR OTHER IPHONE MODELS ............................................. */}
-        <Box  display={{ base: 'none', md: 'block' }}>
-    
-      
-            <Center><Text fontSize="2xl" color="black" fontWeight="bold" mt="10" ml="0"  textAlign="left">Which iPhone is right for you?</Text> </Center>
-    
-    {/* .....................four phone picture ........... */}
-    <Center mt="10">
-    
-    <Flex >
-            <Link>
-                    <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
-                            <Image src='https://img.freepik.com/premium-photo/smart-phone-isolated-white-screen-with-empty-background-mockup_752648-43.jpg' alt='iPhone 15' 
-                            height= "200px" width= "100%" />
-                            <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone 15</Text></Center>
-                            <Center> <Text fontSize="xl" >The ultimate iPhone.</Text></Center>
-                           
-                         </Box>
-                    </Link>
-    
-                    <Link>
-                    <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
-                            <Image src='https://cdn.dxomark.com/wp-content/uploads/medias/post-125428/Apple-iPhone-14-Pro-Max_FINAL_featured-image-packshot-review-1.jpg' alt='iPhone 14' 
-                           height= "200px" width= "100%" />
-                            <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone 14</Text></Center>
-                            <Center> <Text fontSize="xl" >As amazing as ever.</Text></Center>
-                           
-                         </Box>
-                    </Link>
-    
-                    <Link>
-                    <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
-                            <Image src='https://media.ldlc.com/r1600/ld/products/00/05/93/86/LD0005938604_1.jpg' alt='Dan Abramov' 
-                            height= "200px" width= "80%" />
-                           <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone 13</Text></Center>
-                            <Center> <Text fontSize="xl">A total powerhouse.</Text></Center>
-                           
-                         </Box>
-                    </Link>
-    
-                    <Link>
-                    <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
-                            <Image src='https://www.refurbished.store/cache/images/iphone-xs-zilver-multiapple_1_600x600_BGresize_16777215-tj.png' alt='Dan Abramov' 
-                           height= "200px" width= "100%" />
-                                  <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone X</Text></Center>
-                            <Center> <Text fontSize="xl">Serious power. Serious value.</Text></Center>
-                           
-                         </Box>
-                    </Link>
-            </Flex>
-                           </Center>
-    
-                           </Box>
-    
+    <Box  display={{ base: 'none', md: 'block' }}>
+
+  
+<Center><Text fontSize="2xl" color="black" fontWeight="bold" mt="10" ml="0"  textAlign="left">Which iPhone is right for you?</Text> </Center>
+
+{/* .....................four phone picture ........... */}
+<Center mt="10">
+
+<Flex >
+<Link to = "/iphone15preorder">
+        <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
+                <Image src='https://img.freepik.com/premium-photo/smart-phone-isolated-white-screen-with-empty-background-mockup_752648-43.jpg' alt='iPhone 15' 
+                height= "200px" width= "100%" />
+                <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone 15</Text></Center>
+                <Center> <Text fontSize="xl" >The ultimate iPhone.</Text></Center>
+               
+             </Box>
+  </Link>
+
+       <Link to = "/iphone14">
+        <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
+                <Image src='https://cdn.dxomark.com/wp-content/uploads/medias/post-125428/Apple-iPhone-14-Pro-Max_FINAL_featured-image-packshot-review-1.jpg' alt='iPhone 14' 
+               height= "200px" width= "100%" />
+                <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone 14</Text></Center>
+                <Center> <Text fontSize="xl" >As amazing as ever.</Text></Center>
+               
+             </Box>
+        </Link>
+
+        <Link to = "/iphone13">
+        <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
+                <Image src='https://media.ldlc.com/r1600/ld/products/00/05/93/86/LD0005938604_1.jpg' alt='Dan Abramov' 
+                height= "200px" width= "80%" />
+               <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone 13</Text></Center>
+                <Center> <Text fontSize="xl">A total powerhouse.</Text></Center>
+               
+             </Box>
+        </Link>
+
+        <Link to = "/iphone10">
+        <Box  boxSize={{ base: '200px', md: '200px', xl: '200px' }}>
+                <Image src='https://www.refurbished.store/cache/images/iphone-xs-zilver-multiapple_1_600x600_BGresize_16777215-tj.png' alt='Dan Abramov' 
+               height= "200px" width= "100%" />
+                      <Center> <Text fontSize="xl" fontWeight="bold" mr="0" mt="8" ml = "1">iPhone X</Text></Center>
+                <Center> <Text fontSize="xl">Serious power. Serious value.</Text></Center>
+               
+             </Box>
+        </Link>
+</Flex>
+</Center>
+</Box>
     
     {/* ........................QUESTION AND ANSWER................... */}
                            <Box mt= "200">
@@ -565,7 +615,7 @@ const Phone15PreOrder =()=>{
                          </h2>
                          <AccordionPanel pb={4}>
                          The Affordable Connectivity Program (ACP) gives a discount on your household's monthly broadband internet service, if you are eligible. Participating broadband providers will apply this discount to your broadband plan.
-                         A discount of up to $30/month for internet service (or a discount up to $75/month for households on qualifying Tribal lands); and. A one-time discount of up to $100 for a laptop, desktop computer, or tablet purchased through a participating provider.
+                         A discount of up to ₹3250/month for internet service (or a discount up to ₹7500/month for households on qualifying Tribal lands); and. A one-time discount of up to ₹1236 for a laptop, desktop computer, or tablet purchased through a participating provider.
                          The Affordable Connectivity Program is limited to one monthly service discount and one device discount per household. Who Is Eligible? Check out fcc.gov/ACP for a Consumer FAQ and other program resources.
                          Connectivity Service means the service that allows Dedicated Equipment to connect to the internet.The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.
     

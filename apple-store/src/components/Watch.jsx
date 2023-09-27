@@ -1,18 +1,21 @@
 import { Box ,Center,Flex, Image , Text , Button} from "@chakra-ui/react"
 import axios from 'axios';
-import { useState , useEffect} from 'react';
+import { useState , useEffect, useContext} from 'react';
 import PhoneNavbar from "./Navbar/PhoneNavbar";
+import { AuthContext } from "./ContextApi/Context";
 
 
 const Watch =()=>{
     const [data , setData] = useState([]);
+  const {SetCartData} = useContext(AuthContext);
+
 
     useEffect(()=>{
         fetchData();
     } , [])
 
     const fetchData=()=>{
-        axios.get("http://localhost:8080/watch").then((res)=>{
+        axios.get("https://troubled-ray-fashion.cyclic.cloud/watch").then((res)=>{
             setData(res.data)
             console.log(res);
         }).catch((err)=>{
@@ -20,6 +23,26 @@ const Watch =()=>{
         })
     }
     console.log(data)
+
+    const addToCart = (id, item) => {
+      // Create a new item object to add to the cart
+      const newItem = {
+        image: item.image,
+        name: item.name,
+        quantity: 1,
+        price: item.price,
+        id: id,
+      };
+    
+      console.log("Adding item to cart:", newItem);
+    
+      // Update the cartData array with the new item
+      SetCartData((prevCartData) => [...prevCartData, newItem]);
+    };
+    
+
+
+
     return (
         <Box>
           <PhoneNavbar/>
@@ -171,13 +194,15 @@ const Watch =()=>{
         <Box>
         <Center mt="1rem">
         <Button
-            width={{ base: '100%', md: 'auto' }}
-            colorScheme="blue"
-            type="submit"
-            fontSize={{ base: 'lg', md: '2xl' }}
-          >
-            Add to Cart
-          </Button>
+  width={{ base: '100%', md: 'auto' }}
+  colorScheme="blue"
+  type="submit"
+  fontSize={{ base: 'lg', md: '2xl' }}
+  onClick={() => addToCart(e._id, e)}
+>
+  Add to Cart
+</Button>
+
         </Center>
         </Box>
          

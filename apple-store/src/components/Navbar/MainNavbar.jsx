@@ -17,11 +17,16 @@ function MainNavbar() {
     fontSize: '12px',
     padding: '8px', // Remove default list bullets
   };
-
+  const stickyNavbarStyle = {
+    position: 'sticky',
+    top: 0, // Stick to the top of the viewport
+    backgroundColor: 'white', // Customize the background color as needed
+    zIndex: 1000, // Ensure it's above other content
+  };
 
 
   return (
-    <Box margin="auto">
+    <Box margin="auto" style={stickyNavbarStyle} >
       <Flex
         as="ul"
         align="center"
