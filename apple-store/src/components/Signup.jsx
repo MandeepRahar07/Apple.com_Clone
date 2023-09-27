@@ -122,28 +122,7 @@ const Signup = ()=>{
        
     <div>
         <form onSubmit={handleSubmit}>
- <Flex justifyContent="space-between" alignItems="center" mr="280px" ml="280px">
-          <Heading as="h3" size="lg">
-            Apple ID
-          </Heading>
-          <Flex justifyContent="space-between" alignItems="center">
-            <Link>
-              <Text fontSize="xl" color="gray.500" mr="2rem">
-                Sign In
-              </Text>
-            </Link>
-            <Link>
-              <Text fontSize="xl" color="gray.500" mr="2rem">
-                Create Your Apple ID
-              </Text>
-            </Link>
-            <Link>
-              <Text fontSize="xl" color="gray.500">
-                FAQ
-              </Text>
-            </Link>
-          </Flex>
-        </Flex>
+
        
 <hr></hr>
 

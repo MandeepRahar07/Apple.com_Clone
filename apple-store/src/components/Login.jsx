@@ -12,12 +12,14 @@ import {
   Alert , AlertIcon
 } from '@chakra-ui/react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react'
+import {Link as ReactLink} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
   const toast = useToast()
+ 
 
   const [data, setData] = useState({
     email: '',
@@ -38,13 +40,13 @@ const Login = () => {
       console.log(response);
   
       if (response.status === 200) {
+        navigate("/");
         // Login successful
         console.log(response.data);
+
   
         // Update data if needed
         setData({ ...data, email: '', password: '' });
-  
-           
         // Display success message
         toast({
           title: 'Success',
@@ -53,6 +55,7 @@ const Login = () => {
           duration: 5000,
           isClosable: true,
         });
+       
       }
     } catch (error) {
       console.error('Error logging in:', error);
@@ -102,29 +105,7 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <Flex justifyContent="space-between" alignItems="center" mr="280px" ml="280px">
-          <Heading as="h3" size="lg">
-            Apple ID
-          </Heading>
-          <Flex justifyContent="space-between" alignItems="center">
-            <Link>
-              <Text fontSize="xl" color="gray.500" mr="2rem">
-                Sign In
-              </Text>
-            </Link>
-            <Link>
-              <Text fontSize="xl" color="gray.500" mr="2rem">
-                Create Your Apple ID
-              </Text>
-            </Link>
-            <Link>
-              <Text fontSize="xl" color="gray.500">
-                FAQ
-              </Text>
-            </Link>
-          </Flex>
-        </Flex>
-        <hr></hr>
+      
         <center  flexDirection="column" alignItems="center">
           <Image
             boxSize={{ base: '100px', md: '200px' }}
@@ -173,12 +154,14 @@ const Login = () => {
             Remember me
           </Checkbox>
         </Center>
-
-        <Center mt="1rem">
+<ReactLink to = "/signup">
+<Center mt="1rem">
           <Link color="blue.500" textDecoration="underline">
-            <Text fontSize={{ base: 'xl', md: '2xl' }}>Forgotten your password?</Text>
+            <Text fontSize={{ base: 'xl', md: '2xl' }}>Create new Account</Text>
           </Link>
         </Center>
+</ReactLink>
+     
 
         <Center mt="1rem">
           <Button
