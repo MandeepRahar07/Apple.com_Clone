@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../ContextApi/Context';
 import { Button, Box ,Flex} from '@chakra-ui/react';
 import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Cartpage() {
   const { CartData } = useContext(AuthContext);
@@ -96,7 +97,8 @@ function Cartpage() {
   <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px', color: '#333' }}>Total Price:</h3>
   <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: '#ff5733',paddingLeft:"10px"}}>000000</h3>
             </Flex>
-  <Button
+<Link to = "/address">
+<Button
     backgroundColor="#4caf50"
     color="white"
     padding="10px 20px"
@@ -108,6 +110,7 @@ function Cartpage() {
   >
     Checkout
   </Button>
+</Link>  
 </Box>
 
 
