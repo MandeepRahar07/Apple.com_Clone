@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {
   Heading,
-  FormControl,Center,
+  FormControl,
+  Center,
   Input,
   Flex,
   Text,
@@ -9,45 +10,43 @@ import {
   Checkbox,
   Link,
   Image,
-  Alert , AlertIcon
+  Alert,
+  AlertIcon,
 } from '@chakra-ui/react';
 import axios from 'axios';
-import { useToast } from '@chakra-ui/react'
-import {Link as ReactLink} from 'react-router-dom'
+import { useToast } from '@chakra-ui/react';
+import { Link as ReactLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from './ContextApi/Context';
 
 const Login = () => {
+  const {name, setIsAuth, setNamelogin } = useContext(AuthContext);
   const navigate = useNavigate();
-  const toast = useToast()
- 
+  const toast = useToast();
 
-  const [data, setData] = useState({
-    email: '',
-    password: '',
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    if (e.target.name === 'email') {
+      setEmail(e.target.value);
+    } else if (e.target.name === 'password') {
+      setPassword(e.target.value);
+    }
   };
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    try {
-      const response = await axios.post('http://localhost:8080/login', data);
-      console.log(response);
-  
-      if (response.status === 200) {
-        navigate("/");
-        // Login successful
-        console.log(response.data);
 
-  
-        // Update data if needed
-        setData({ ...data, email: '', password: '' });
-        // Display success message
+    try {
+      const response = await axios.post('http://localhost:8080/login', {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        navigate('/');
         toast({
           title: 'Success',
           description: 'Login successful',
@@ -55,16 +54,33 @@ const Login = () => {
           duration: 5000,
           isClosable: true,
         });
-       
+        const { token } = response.data;
+        localStorage.setItem('token', token);
+
+        const userResponse = await fetch('http://localhost:8080/users', {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (userResponse.ok) {
+          const userData = await userResponse.json();
+          const matchedUser = userData.find((user) => user.email === email);
+
+          if (matchedUser) {
+            const matchedUserName = matchedUser.name;
+            setNamelogin(matchedUserName);
+            console.log(name);
+            setIsAuth(true);
+          }
+        }
       }
     } catch (error) {
       console.error('Error logging in:', error);
-  
+
       if (error.response && error.response.status === 409) {
-        // User not found
         console.error('User not found. Please sign up first.');
-  
-        // Display an error message
         toast({
           title: 'Error',
           description: 'User not found. Please sign up first.',
@@ -73,10 +89,7 @@ const Login = () => {
           isClosable: true,
         });
       } else if (error.response && error.response.status === 422) {
-        // Wrong password
         console.error('Wrong password. Please try again.');
-  
-        // Display an error message
         toast({
           title: 'Error',
           description: 'Wrong password. Please try again.',
@@ -84,23 +97,9 @@ const Login = () => {
           duration: 5000,
           isClosable: true,
         });
-      } else {
-        // Other error
-        console.error('An error occurred during login. Please try again later.');
-  
-        // Display an error message
-        toast({
-          title: 'Error',
-          description: 'An error occurred during login. Please try again later.',
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-        });
       }
     }
   };
-
-
 
   return (
     <div>

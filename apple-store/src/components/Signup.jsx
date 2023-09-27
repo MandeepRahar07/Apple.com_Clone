@@ -16,7 +16,7 @@ const Signup = ()=>{
     const toast = useToast()
 
     const [data , setData] = useState({
-      Fname :"",
+      name :"",
       Lname : "",
       Country :"",
       Birth :"",
@@ -135,7 +135,7 @@ const Signup = ()=>{
             <Center>
             <Flex whiteSpace={0} flexDir={{ base: 'column', md: 'row' }}>
                 <FormControl style={{ marginRight: { base: '0', md: '1rem' } }}>
-                    <Input type='text' width={{ base: '100%', md: '17rem' }} height="4rem"  required = "true" name = "Fname" onChange={handleChange} placeholder='Enter First Name' sx={{ '::placeholder': { fontSize: 'xl' } }} color='blue.500' />
+                    <Input type='text' width={{ base: '100%', md: '17rem' }} height="4rem"  required = "true" name = "name" onChange={handleChange} placeholder='Enter First Name' sx={{ '::placeholder': { fontSize: 'xl' } }} color='blue.500' />
                 </FormControl>
 
                 <FormControl >

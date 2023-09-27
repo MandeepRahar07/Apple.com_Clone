@@ -5,9 +5,10 @@ import { FaBars } from 'react-icons/fa';
 import { AuthContext } from '../ContextApi/Context';
 import { Link } from 'react-router-dom';
 
+
 function MainNavbar() {
 
-  const {name,setName} = useContext(AuthContext);
+  const {name,setName,CartData} = useContext(AuthContext);
 
 
   const listItemStyle = {
@@ -102,7 +103,15 @@ function MainNavbar() {
         <Link to = "cart">
         <li style={listItemStyle}>
           <Box display={['block', 'flex']} alignItems="center">
+            <Flex>
+              <Box>
+
             <AiOutlineShoppingCart className="icon" />
+              </Box>
+              <Box>
+            <h3  style={{marginBottom:"-7px",color:'red', fontWeight:"bold"}}>{CartData.length}</h3>
+              </Box>
+            </Flex>
           </Box>
         </li>
         </Link>

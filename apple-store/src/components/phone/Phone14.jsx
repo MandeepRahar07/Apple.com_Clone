@@ -15,7 +15,7 @@ import { Box, Heading, Text , Image, Flex, Button ,Modal,
 import axios from "axios";
 import { useEffect , useState } from 'react';
 import {Link} from 'react-router-dom'
-import PhoneNavbar from '../Navbar/PhoneNavbar';
+import PhoneNavbar from '../Navbar/PhoneNavbar'
 
 function Phone14() {
 
