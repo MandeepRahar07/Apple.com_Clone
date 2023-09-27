@@ -9,16 +9,19 @@ import {
   useToast,
   Select,
   Flex,
+  Center,
 } from '@chakra-ui/react';
 import axios from 'axios';
 
 const Address = () => {
   const toast = useToast({ position: 'top-left' }); // Set the toast position to top-left
   const [formData, setFormData] = useState({
-    country: '',
+    fname: '',
+    lname: '',
+    address: '',
     city: '',
-    town: '',
-    pincode: '',
+    pin: '',
+    country: '',
     contactNumber: '',
   });
 
@@ -62,15 +65,56 @@ const Address = () => {
   };
   return (
     <Box p={4} >
-      <Heading as="h1" size="lg" mb={4}>
-       Add you Address Please
+      <Heading as="h1" size="lg" mb={2}>
+       Enter your name and address
       </Heading>
       <form onSubmit={handleSubmit}>
+        <Center>
         <div style={{marginTop: "80px"}}>
-            <Flex flexDirection={{base: "column", md:"row"}}>
-
-           
           <FormControl mb={4} flex="1" mr={4}>
+
+             <FormLabel>First Name</FormLabel>
+            <Input type="text" name="fname" value={formData.fname} onChange={handleChange} required />
+
+            <FormLabel>Last Name</FormLabel>
+            <Input type="text" name="fname" value={formData.lname} onChange={handleChange} required />
+       
+            <FormLabel>Street Address</FormLabel>
+            <Input type="text" name="address" value={formData.address} onChange={handleChange} required />
+
+            <Flex flexDirection={{ base: 'column', md: 'row' }}>
+              <FormControl mb={2} mr={{ base: 0, md: 2 }}>
+              <FormLabel>City</FormLabel>
+                <Input
+                  type="text"
+                  width="100%"
+                  height="2rem"
+                  required={true}
+                  name="city"
+                  placeholder="City"
+                  sx={{ '::placeholder': { fontSize: 'md' } }}
+                  color="blue.500"
+                  onChange={handleChange}
+                />
+              </FormControl>
+
+
+              <FormControl mb={2}>
+              <FormLabel>Pin No</FormLabel>
+                <Input
+                  type="text"
+                  width="100%"
+                  height="2rem"
+                  required={true}
+                  name="pin"
+                  placeholder="Pin No"
+                  sx={{ '::placeholder': { fontSize: 'md' } }}
+                  color="blue.500"
+                  onChange={handleChange}
+                />
+              </FormControl>
+            </Flex>
+
           <FormLabel>Country</FormLabel>
           <Select
             name="country"
@@ -82,32 +126,24 @@ const Address = () => {
             <option value="">Select Country</option>
             <option value="Country1">Country 1</option>
             <option value="Country2">Country 2</option>
-            <option value="Country2">Country 2</option>
             {/* Add more options as needed */}
           </Select>
         </FormControl>
-          <FormControl mb={4} flex="1" mr={4}>
-            <FormLabel>City</FormLabel>
-            <Input type="text" name="city" value={formData.city} onChange={handleChange} required />
-          </FormControl>
-          <FormControl mb={4} flex="1" mr={4}>
-            <FormLabel>Town</FormLabel>
-            <Input type="text" name="town" value={formData.town} onChange={handleChange} required />
-          </FormControl>
-          <FormControl mb={4} flex="1" mr={4}>
-            <FormLabel>Pincode</FormLabel>
-            <Input type="text" name="pincode" value={formData.pincode} onChange={handleChange} required />
-          </FormControl>
+
+         
           <FormControl mb={4} flex="1">
             <FormLabel>Contact Number</FormLabel>
             <Input type="text" name="contactNumber" value={formData.contactNumber} onChange={handleChange} required />
           </FormControl>
-          </Flex>
+         
         </div>
+      
+        </Center>
         <Button type="submit" colorScheme="teal">
-          Save Address
+          Continue to Payment 
         </Button>
       </form>
+   
     </Box>
   );
 };
