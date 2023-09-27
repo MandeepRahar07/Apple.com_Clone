@@ -1,9 +1,10 @@
 import { Box, Image, Heading, Text, Button, Center } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 const Success = () => {
   const navigate = useNavigate(); // Use this for navigation
-
+ 
   const randomOrderId = Math.round(Math.random() * 3311000);
 
   const continueShopping = () => {
@@ -19,13 +20,14 @@ const Success = () => {
         width="200px"
       />
         </Center>
-     
+        
       <Heading as="h2" size="lg">
         Thank you for your purchase!
       </Heading>
       <Text>
         Your order id: <span id="order">{randomOrderId}</span>
       </Text>
+
       <Button
         colorScheme="teal"
         onClick={continueShopping}

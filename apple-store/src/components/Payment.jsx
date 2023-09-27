@@ -11,12 +11,14 @@ import { Box, Heading, Text , Image, Flex, Button ,Modal,
   AccordionPanel,
   AccordionIcon,} from "@chakra-ui/react";
   import axios from "axios";
-import { useEffect , useState } from 'react';
+import { useEffect , useState,useContext } from 'react';
 import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "./ContextApi/Context";
 
 const Payment =()=>{
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {SetCartData} = useContext(AuthContext)
   const [data , setData] = useState({
     number : "",
     code : "",
@@ -53,6 +55,7 @@ const Payment =()=>{
         console.log(res);
         setData(res.data);
         navigate("/success")
+        SetCartData([]);
         // navigate("")
       })
       .catch((err) => {
