@@ -2,8 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import Login from '../Login';
 import Signup from '../Signup';
 import Apple from '../Apple';
-import Phone14 from '../Iphone/Phone14';
-import Phone144 from '../Iphone/Phone144';
+import Phone14 from '../phone/Phone14';
+import Phone144 from '../phone/Phone144';
 
 const AppRoutes = () => {
   return (
