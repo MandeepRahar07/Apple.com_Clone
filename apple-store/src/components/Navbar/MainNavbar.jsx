@@ -138,9 +138,12 @@ function MainNavbar() {
             <MenuList>
               <MenuItem>Mac</MenuItem>
               <MenuItem>Store</MenuItem>
-              
+              <Link to="/iphone15">
               <MenuItem>iPhone</MenuItem>
+              </Link>
+
               
+              {/* ///////// */}
 
               <Link to = "/watch">  <MenuItem>Watch</MenuItem> </Link>
               <MenuItem>TV & Home</MenuItem>

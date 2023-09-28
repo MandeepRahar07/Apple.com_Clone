@@ -40,7 +40,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/login', {
+      const response = await axios.post('https://troubled-ray-fashion.cyclic.cloud/login', {
         email,
         password,
       });
