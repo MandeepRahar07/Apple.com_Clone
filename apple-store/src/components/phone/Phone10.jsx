@@ -379,7 +379,7 @@ const storeData=(el)=>{
 <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  
  onClick={() => {
   setGb("256GB");
-  setPrice(40999);
+  setPrice(37999);
 }}
 >       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">

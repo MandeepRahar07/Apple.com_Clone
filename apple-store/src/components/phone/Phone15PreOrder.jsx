@@ -360,34 +360,34 @@ const storeData=(el)=>{
     </Flex>
     
     
-    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(37999)}}  >       
+    <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(97915)}}  >       
                             <Flex justifyContent="space-around" alignItems="center" width="100%">
                             <Box textAlign="left" >
                                     <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">128GB</Text>
-                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹67915 or ₹2805/mo.per for 24 mo. </Text>
+                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹97915 or ₹2805/mo.per for 24 mo. </Text>
                             </Box>
                          </Flex>  
     </Button>
     
     <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={() => {
   setGb("256GB");
-  setPrice(40999);
+  setPrice(116415);
 }} >       
                             <Flex justifyContent="space-around" alignItems="center" width="100%">
                             <Box textAlign="left" >
                                     <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">256GB</Text>
-                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹76415 or ₹2805/mo.per for 24 mo.</Text>
+                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹116415 or ₹2805/mo.per for 24 mo.</Text>
                             </Box>
                          </Flex>  
     </Button>
     
     <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}  onClick={()=>{
  setGb("512GB");
- setPrice(70599)}}>       
+ setPrice(193415)}}>       
                             <Flex justifyContent="space-around" alignItems="center" width="100%">
                             <Box textAlign="left" >
                                     <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">512GB</Text>
-                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹93415 or ₹3825/mo.per  for 24 mo.</Text>
+                                    <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹193415 or ₹3825/mo.per  for 24 mo.</Text>
                             </Box>
                          </Flex>  
     </Button>

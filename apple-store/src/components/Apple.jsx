@@ -27,6 +27,7 @@ const Apple = () => {
     };
   }, [currentIndex, images.length]);
 
+  
   return (
     <Box>
 

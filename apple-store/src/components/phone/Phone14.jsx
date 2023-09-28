@@ -39,6 +39,7 @@ function Phone14() {
       const [order, setOrder] = useState(
         'https://media.mts.ee/eyJidWNrZXQiOiJtdHMtcHJvZHVjdC1pbWFnZXMiLCJrZXkiOiJjXC9jYlwvY2I2MzcwNjhiMDUxODI2NGIwODIzNzk3YWFjNjViNTAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjYzMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19'
       ); 
+
       const [price, setPrice] = useState(37299);
 
       const {CartData,SetCartData} = useContext(AuthContext)
@@ -156,34 +157,6 @@ const storeData=(el)=>{
             />
           </Box>
 
-          
-          
- {/* .........................................BOX TO DISPLAY ACTUAL BOOKING AT LEFT SIDE 2ND BOX............................. */}
-
-
-          {/* <Box direction={{ base: 'column', md: 'row', lg: 'row' }}    >
-      {buttonClick ? (
-        <Box
-        height={{ base: 'auto', md: '400px', xl: '600px' }}
-        width="100%"
-        margin={{ base: 'auto', md: '10px', lg: '20px' }} // Add margin for larger screens
-        mt="50px"
-        boxShadow="xl"
-        borderRadius="2xl"
-        overflow="hidden"
-        >
-          <img src={color} alt="Dan Abramov"    width="100%"
-              height="100%"
-              objectFit="cover"
-              fontSize={{ base: 'lg', md: 'xl', xl: '2xl' }} />
-          <Box>
-            {gb ? <Text>Storage: {gb}</Text> : ''}
-          </Box>
-        </Box>
-      ) : (
-        ''
-      )}
-    </Box> */}
 
 {/* .......................................................................................... */}
 <Box ml="10px" mt="8px">
@@ -361,18 +334,18 @@ const storeData=(el)=>{
 </Flex>
 
 
-<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(37999)}}   >       
+<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(79900)}}   >       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">128GB</Text>
-                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹799 or ₹2546/mo.per for 24 mo. </Text>
+                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹79900 or ₹2546/mo.per for 24 mo. </Text>
                         </Box>
                      </Flex>  
 </Button>
 
 <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}   onClick={() => {
   setGb("256GB");
-  setPrice(40999);
+  setPrice(76415);
 }} >       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
@@ -384,7 +357,7 @@ const storeData=(el)=>{
 
 <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}   onClick={()=>{
  setGb("512GB");
- setPrice(70599)}}>       
+ setPrice(93415)}}>       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">512GB</Text>

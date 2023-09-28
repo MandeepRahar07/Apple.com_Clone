@@ -365,11 +365,11 @@ const storeData=(el)=>{
 </Flex>
 
 
-<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(37999)}}     >       
+<Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)"}} onClick={()=>{setGb("128GB"); setPrice(40999)}}     >       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">128GB</Text>
-                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From $799 or $33.29/mo.per for 24 mo. </Text>
+                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹40999 or $1699/mo.per for 24 mo. </Text>
                         </Box>
                      </Flex>  
 </Button>
@@ -381,18 +381,18 @@ const storeData=(el)=>{
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">256GB</Text>
-                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From $899 or $37.45/mo.per for 24 mo.</Text>
+                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹50999 or $37.45/mo.per for 24 mo.</Text>
                         </Box>
                      </Flex>  
 </Button>
 
 <Button height="80px" width= "100%" mt = "20px"  border="2px  black"  _focus={{ boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.5)" }}   onClick={()=>{
  setGb("512GB");
- setPrice(70599)}}>       
+ setPrice(79599)}}>       
                         <Flex justifyContent="space-around" alignItems="center" width="100%">
                         <Box textAlign="left" >
                                 <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">512GB</Text>
-                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From $1099 or $45.79/mo.per  for 24 mo.</Text>
+                                <Text fontSize="l" color="black" fontWeight={600} mt="1" ml="0" textAlign="left">From ₹79599 or $45.79/mo.per  for 24 mo.</Text>
                         </Box>
                      </Flex>  
 </Button>

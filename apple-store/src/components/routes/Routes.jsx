@@ -31,10 +31,7 @@ const AppRoutes = () => {
         <Route path= "/iphone15" element = {<Phone15/>}></Route>
         <Route path= "/iphone15preorder" element = {<Phone15PreOrder/>}></Route>
 
-      
-        {/* <Route element={<PrivatRoute></PrivatRoute>}>
-        <Route path= "/address" element = {<Address/>}></Route>
-    </Route> */}
+    
 
     <Route path ="/address" element={<PrivatRoute><Address/></PrivatRoute> }></Route>
 
