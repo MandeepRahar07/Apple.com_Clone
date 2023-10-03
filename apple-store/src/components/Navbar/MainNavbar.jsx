@@ -143,7 +143,7 @@ function MainNavbar() {
               </Link>
 
               
-              {/* ///////// */}
+              
 
               <Link to = "/watch">  <MenuItem>Watch</MenuItem> </Link>
               <MenuItem>TV & Home</MenuItem>
