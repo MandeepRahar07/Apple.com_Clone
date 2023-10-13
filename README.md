@@ -1,9 +1,10 @@
 # Apple
 # Apple Website Clone
 
+
 ## Overview
 The Apple Website Clone is a meticulously designed and responsive platform that emulates the aesthetics and functionality of Apple's official website. It offers users a seamless experience to explore and purchase Apple products, access support, and stay updated on the latest innovations in the world of technology.
-
+## 
 ## Technologies Used
 - React
 - Redux
