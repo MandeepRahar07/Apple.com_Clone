@@ -70,7 +70,7 @@ const Signup = ()=>{
             title: 'Account created.',
             description: "We've created your account for you.",
             status: 'success',
-            duration: 9000,
+            duration: 2000,
             isClosable: true,
           });
         }
@@ -87,7 +87,7 @@ const Signup = ()=>{
             title: 'Error',
             description: 'This email id is already registered. Please use another one.',
             status: 'error',
-            duration: 5000,
+            duration: 2000,
             isClosable: true,
           });
         } else if (error.response && error.response.status === 500) {
@@ -100,7 +100,7 @@ const Signup = ()=>{
             title: 'Error',
             description: 'Wrong password. Please try again.',
             status: 'error',
-            duration: 5000,
+            duration: 2000,
             isClosable: true,
           });
         } else {
@@ -113,7 +113,7 @@ const Signup = ()=>{
             title: 'Error',
             description: 'An error occurred during login. Please try again later.',
             status: 'error',
-            duration: 5000,
+            duration: 2000,
             isClosable: true,
             position: 'top',
           });

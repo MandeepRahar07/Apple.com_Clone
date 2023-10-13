@@ -52,7 +52,7 @@ const Login = () => {
           title: 'Success',
           description: 'Login successful',
           status: 'success',
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
         });
 
@@ -91,7 +91,7 @@ const Login = () => {
           title: 'Error',
           description: 'User not found. Please sign up first.',
           status: 'error',
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
         });
       } else if (error.response && error.response.status === 422) {
@@ -101,7 +101,7 @@ const Login = () => {
           title: 'Error',
           description: 'Wrong password. Please try again.',
           status: 'error',
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
         });
       }
