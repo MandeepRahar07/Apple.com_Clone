@@ -1,6 +1,13 @@
 # Apple
 # Apple Website Clone
 
+## Explore the Website
+
+You can explore the deployed version of the Apple Website Clone by visiting the following link:
+
+[Apple Website Clone](https://apple-store-8qygs2jyy-mandeeprahar07.vercel.app/)
+
+Feel free to click the link above and interact with our project. We'd love to hear your feedback!
 
 ## Overview
 The Apple Website Clone is a meticulously designed and responsive platform that emulates the aesthetics and functionality of Apple's official website. It offers users a seamless experience to explore and purchase Apple products, access support, and stay updated on the latest innovations in the world of technology.
