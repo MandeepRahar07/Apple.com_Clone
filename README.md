@@ -28,6 +28,7 @@ The Apple Website Clone is a meticulously designed and responsive platform that 
 ## reponsiveness 
 <img width="635" alt="image" src="https://github.com/MandeepRahar07/Apple.com_Clone/assets/127789910/07eed4b6-7707-4f51-8ccd-6283a827352b">
 
+
 <img width="631" alt="image" src="https://github.com/MandeepRahar07/Apple.com_Clone/assets/127789910/75fc755b-6d68-4eb4-8472-4f1ae97f57f9">
 
 
