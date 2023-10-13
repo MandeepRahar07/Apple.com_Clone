@@ -43,3 +43,15 @@ Shopping cart and checkout functionality.
 # Acknowledgements
 The Apple logo and design are registered trademarks of Apple Inc. This project is for educational purposes and is not affiliated with or endorsed by Apple Inc.
 
+# Thank You for Checking Out Our Project
+
+We want to extend our heartfelt thanks for taking the time to explore our Apple Website Clone project. We appreciate your interest and support in our endeavor to create a seamless and enjoyable experience for users.
+
+If you found our project useful and like what we've built, please consider giving us a star ⭐ on our GitHub repository. Your support and feedback are invaluable to us, and it motivates us to continue improving and expanding this project.
+
+Your feedback, suggestions, and contributions are always welcome. Feel free to open issues or submit pull requests to help us make this project even better.
+
+Thank you once again for your support!
+
+Best regards,
+Mandeep Rahar
